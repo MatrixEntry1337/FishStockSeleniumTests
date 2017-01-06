@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.AfterClass;
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
@@ -19,6 +19,7 @@ import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
+@Ignore
 public class FishStockFrontEndLoginTest {
 
 	private static WebDriver driver;
