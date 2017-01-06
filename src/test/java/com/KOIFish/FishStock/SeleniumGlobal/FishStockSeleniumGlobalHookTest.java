@@ -8,6 +8,6 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features={"src/test/resources/login.feature"},
 				glue={"com.KOIFish.FishStock.Login"})
-public class FishStockSeleniumGlobalTestHook {
+public class FishStockSeleniumGlobalHookTest {
 
 }
