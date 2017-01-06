@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.machinepublishers.jbrowserdriver.JBrowserDriver;
+import com.machinepublishers.jbrowserdriver.Settings;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -31,7 +32,14 @@ public class FishStockFrontEndLoginTest {
 
 	@Before
 	public static void prepareDriver() {
-		driver = new JBrowserDriver();
+		driver = new JBrowserDriver(Settings.builder()
+				.javaOptions("-XX:+PrintCommandLineFlags",
+						"-Xmx300m", "-Xms250m",
+						"-Xmn200m","-XX:+CreateMinidumpOnCrash",
+						"-XX:+UseG1GC", "-server", "-XX:+AggressiveOpts")
+						.cache(false)
+						.build()
+				);
 		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 		driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
