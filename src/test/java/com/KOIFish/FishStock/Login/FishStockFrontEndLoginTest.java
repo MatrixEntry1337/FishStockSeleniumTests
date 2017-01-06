@@ -34,8 +34,8 @@ public class FishStockFrontEndLoginTest {
 	public static void prepareDriver() {
 		driver = new JBrowserDriver(Settings.builder()
 				.javaOptions("-XX:+PrintCommandLineFlags",
-						"-Xmx300m", "-Xms250m",
-						"-Xmn200m","-XX:+CreateMinidumpOnCrash",
+						"-Xmx250m", "-Xms200m",
+						"-Xmn150m","-XX:+CreateMinidumpOnCrash",
 						"-XX:+UseG1GC", "-server", "-XX:+AggressiveOpts")
 						.cache(false)
 						.build()
