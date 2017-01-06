@@ -8,24 +8,26 @@ Feature: login
     Given I am on the main page
     And login and password fields exist
     And login button exists
-    When Input <login> and <password> and click the login button
+    When I input "<correctlogin>" and "<correctpassword>"
+    And and click the login button
     Then I gain access to the main page
 
     Examples: 
-      | login   | password |
-      | thanks  | thanks   |
-      | jfisher | jfisher  |
+      | correctlogin   | correctpassword |
+      | thanks         | thanks          |
+      | jfisher        | jfisher         |
 
       
   Scenario Outline: login with incorrect login and/or password combinations
     Given I am on the main page
     And login and password fields exist
     And login button exists
-    When Input <login> and <password> and click the login button
+    When I input "<wronglogin>" and/or "<wrongpassword>" 
+    And click the login button
     Then I get an error message
 
     Examples: 
-      | login      | password   |
-      | thanks     | thanksss   |
-      | jfisherrsz | jfisher    |
-      | kuku       | kuku       |
+      | wronglogin      | wrongpassword   |
+      | thanks          | thanksss        |
+      | jfisherrsz      | jfisher         |
+      | kuku            | kuku            |
