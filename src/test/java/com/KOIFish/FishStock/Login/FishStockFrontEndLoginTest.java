@@ -32,14 +32,7 @@ public class FishStockFrontEndLoginTest {
 
 	@Before
 	public static void prepareDriver() {
-		driver = new JBrowserDriver(Settings.builder()
-				.javaOptions("-XX:+PrintCommandLineFlags",
-						"-Xmx250m", "-Xms200m",
-						"-Xmn150m","-XX:+CreateMinidumpOnCrash",
-						"-XX:+UseG1GC", "-server", "-XX:+AggressiveOpts")
-						.cache(false)
-						.build()
-				);
+		driver = new JBrowserDriver();
 		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 		driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
