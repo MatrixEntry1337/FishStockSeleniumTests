@@ -12,9 +12,5 @@ import cucumber.api.junit.Cucumber;
 				glue={"com.KOIFish.FishStock.Login"})
 public class FishStockSeleniumGlobalHookTest {
 
-	@Before
-	public void setDriverPath(){
-		String PATH_GECKO_DRIVER="/opt/geckodriver";
-		System.setProperty("webdriver.gecko.driver", PATH_GECKO_DRIVER);
-	}
+
 }

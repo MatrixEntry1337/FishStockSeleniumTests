@@ -28,6 +28,11 @@ public class FishStockFrontEndLoginTest {
 			loginButtonId = "submitButton", errorMessageId = "errorMessage";
 
 	private FishStockLoginPage page;
+	
+	static {
+		String PATH_GECKO_DRIVER="/opt/geckodriver";
+		System.setProperty("webdriver.gecko.driver", PATH_GECKO_DRIVER);
+	}
 
 	@Before
 	public static void prepareDriver() {
