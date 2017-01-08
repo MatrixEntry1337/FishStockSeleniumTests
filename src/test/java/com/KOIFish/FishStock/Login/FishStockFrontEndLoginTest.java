@@ -8,9 +8,8 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.machinepublishers.jbrowserdriver.JBrowserDriver;
-import com.machinepublishers.jbrowserdriver.Settings;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -32,7 +31,8 @@ public class FishStockFrontEndLoginTest {
 
 	@Before
 	public static void prepareDriver() {
-		driver = new JBrowserDriver();
+		//driver = new JBrowserDriver();
+		driver = new FirefoxDriver();
 		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 		driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
