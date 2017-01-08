@@ -9,4 +9,5 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(features={"src/main/resources/viewstocks.feature"})
 public class viewStocksCukes {
 
+	//test
 }
