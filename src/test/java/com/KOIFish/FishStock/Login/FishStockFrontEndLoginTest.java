@@ -48,7 +48,6 @@ public class FishStockFrontEndLoginTest {
 
 	@Given("^I am on the main page$")
 	public void i_am_on_the_main_page() {
-		System.out.println(loginPageUrl);
 		page = new FishStockLoginPage(driver, usernameTextBoxName, passwordTextBoxName, loginButtonId, errorMessageId);
 		page.goToLoginPage(loginPageUrl);
 	}
