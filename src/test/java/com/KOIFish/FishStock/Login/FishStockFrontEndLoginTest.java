@@ -9,7 +9,8 @@ import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -29,10 +30,7 @@ public class FishStockFrontEndLoginTest {
 
 	private FishStockLoginPage page;
 	
-	static {
-		String PATH_GECKO_DRIVER="/opt/geckodriver";
-		System.setProperty("webdriver.gecko.driver", PATH_GECKO_DRIVER);
-	}
+	//
 
 	@Before
 	public static void prepareDriver() {
@@ -74,6 +72,9 @@ public class FishStockFrontEndLoginTest {
 	@When("^and click the login button$")
 	public void and_click_the_login_button() {
 		page.clickLoginButton();
+		try {
+		WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, 10).until(ExpectedConditions.alertIsPresent());
+		} catch (RuntimeException e) {}
 	}
 
 	@Then("^I gain access to the main page$")
@@ -91,6 +92,9 @@ public class FishStockFrontEndLoginTest {
 	@When("^click the login button$")
 	public void click_the_login_button() {
 		page.clickLoginButton();
+		try {
+			WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, 10).until(ExpectedConditions.alertIsPresent());
+		} catch (RuntimeException e) {}
 	}
 
 	@Then("^I get an error message$")
