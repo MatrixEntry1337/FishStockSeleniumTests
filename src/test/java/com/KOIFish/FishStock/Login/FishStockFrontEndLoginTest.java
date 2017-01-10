@@ -29,8 +29,6 @@ public class FishStockFrontEndLoginTest {
 			loginButtonId = "submitButton", errorMessageId = "errorMessage";
 
 	private FishStockLoginPage page;
-	
-	//
 
 	@Before
 	public static void prepareDriver() {
@@ -74,7 +72,7 @@ public class FishStockFrontEndLoginTest {
 		page.clickLoginButton();
 		try {
 		WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, 10).until(ExpectedConditions.alertIsPresent());
-		} catch (RuntimeException e) {}
+		}catch (RuntimeException e) {}
 	}
 
 	@Then("^I gain access to the main page$")
