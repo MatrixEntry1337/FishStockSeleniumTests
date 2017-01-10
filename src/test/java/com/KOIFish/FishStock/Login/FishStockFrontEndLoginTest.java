@@ -23,7 +23,7 @@ import cucumber.api.junit.Cucumber;
 public class FishStockFrontEndLoginTest {
 
 	private static WebDriver driver;
-	private final String loginPageUrl = "http://54.242.57.99:8080/FishStock/#!/app/login";
+	private final String loginPageUrl = "http://35.166.23.212:8080/FishStock/#!/app/login";
 	private final String usernameTextBoxName = "username", passwordTextBoxName = "password",
 			loginButtonId = "submitButton", errorMessageId = "errorMessage";
 
