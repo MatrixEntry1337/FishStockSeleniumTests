@@ -3,6 +3,8 @@ package com.KOIFish.FishStock.Login;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Enumeration;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Ignore;
@@ -29,6 +31,16 @@ public class FishStockFrontEndLoginTest {
 			loginButtonId = "submitButton", errorMessageId = "errorMessage";
 
 	private FishStockLoginPage page;
+	
+	static {
+		Properties p = System.getProperties();
+		Enumeration keys = p.keys();
+		while (keys.hasMoreElements()) {
+		    String key = (String)keys.nextElement();
+		    String value = (String)p.get(key);
+		    System.out.println(key + ": " + value);
+		}
+	}
 	
 	@Before
 	public static void prepareDriver() {
