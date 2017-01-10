@@ -37,9 +37,11 @@ public class FishStockFrontEndLoginTest {
 		Enumeration keys = p.keys();
 		while (keys.hasMoreElements()) {
 		    String key = (String)keys.nextElement();
+		    if (!key.contains("gecko")) {continue;}
 		    String value = (String)p.get(key);
 		    System.out.println(key + ": " + value);
 		}
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 	}
 	
 	@Before
