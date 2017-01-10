@@ -29,10 +29,9 @@ public class FishStockFrontEndLoginTest {
 			loginButtonId = "submitButton", errorMessageId = "errorMessage";
 
 	private FishStockLoginPage page;
-
+	
 	@Before
 	public static void prepareDriver() {
-		//driver = new JBrowserDriver();
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 		driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
@@ -72,7 +71,8 @@ public class FishStockFrontEndLoginTest {
 		page.clickLoginButton();
 		try {
 		WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, 10).until(ExpectedConditions.alertIsPresent());
-		}catch (RuntimeException e) {}
+		}
+		catch (RuntimeException e) {}
 	}
 
 	@Then("^I gain access to the main page$")
@@ -92,7 +92,7 @@ public class FishStockFrontEndLoginTest {
 		page.clickLoginButton();
 		try {
 			WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, 10).until(ExpectedConditions.alertIsPresent());
-		} catch (RuntimeException e) {}
+		}catch (RuntimeException e) {}
 	}
 
 	@Then("^I get an error message$")
