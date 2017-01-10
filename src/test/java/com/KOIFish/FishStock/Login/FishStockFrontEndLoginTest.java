@@ -32,17 +32,6 @@ public class FishStockFrontEndLoginTest {
 
 	private FishStockLoginPage page;
 	
-	static {
-		Properties p = System.getProperties();
-		Enumeration keys = p.keys();
-		while (keys.hasMoreElements()) {
-		    String key = (String)keys.nextElement();
-		    if (!key.contains("gecko")) {continue;}
-		    String value = (String)p.get(key);
-		    System.out.println(key + ": " + value);
-		}
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-	}
 	
 	@Before
 	public static void prepareDriver() {
@@ -59,6 +48,7 @@ public class FishStockFrontEndLoginTest {
 
 	@Given("^I am on the main page$")
 	public void i_am_on_the_main_page() {
+		System.out.println(loginPageUrl);
 		page = new FishStockLoginPage(driver, usernameTextBoxName, passwordTextBoxName, loginButtonId, errorMessageId);
 		page.goToLoginPage(loginPageUrl);
 	}
